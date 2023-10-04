@@ -11,13 +11,9 @@ app.use(compression())
 
 
 //init database
-
+require('./dbs/init.mongodb')
 //init routes
-app.get('/',(req,res,next) => {
-    return res.status(200).json({
-        message: 'Invalid'
-    })
-})
+app.use('',require('./routes'))
 
 //handle error
 
